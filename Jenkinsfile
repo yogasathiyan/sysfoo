@@ -7,20 +7,20 @@ pipeline {
     stage("build"){
         steps{
         echo 'step 1-compiling'
-        bat 'mvn compile'
+        sh 'mvn compile'
         }
     }
         stage("test"){
             steps{
               echo 'step 2-test'
-            bat 'mvn clean test'
+            sh 'mvn clean test'
             
         }
     }
     stage("package"){
          steps{
          echo 'step 3-package'
-         bat 'mvn package -DskipTests'
+         sh 'mvn package -DskipTests'
         }
     }
  }
